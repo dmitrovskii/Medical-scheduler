@@ -1,15 +1,3 @@
-import os
-import time
-
-# Функція для очистки консолі
-def clear(ytime):
-    time.sleep(ytime)
-    os.system('cls')
-
-# Допоміжна функція для повідомлення помилки (поки що баговано)
-def ertext(info):
-    print("Невідповідний символ:", info, "!")
-
 # lto - list to output 
 def youinput(lto, text, limit):
 

@@ -1,0 +1,33 @@
+def double_number(num):
+    return num * 2
+
+def check_pin(pin):
+    if pin != 1234:
+        return False
+    else: 
+        return True
+
+def clean_text(text):
+    a = str(text).strip()
+    # print(a) debugging lol
+    return a
+
+# 
+
+a = 5
+b = double_number(a)
+print(b + 10)
+
+# 
+
+if check_pin(1234):
+    print("welcome")
+else:
+    print("you are blocked")
+
+# 
+
+if clean_text(" akuna matata ! ") == "akuna matata !":
+    print("alloha!")
+else:
+    print("Bye!")
