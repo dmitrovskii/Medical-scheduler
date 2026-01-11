@@ -4,8 +4,8 @@ import os
 import time
 
 # Функція для очистки консолі
-def clear(ytime):
-    time.sleep(ytime)
+def clear(parametr):
+    time.sleep(parametr)
     os.system('cls')
 
 # Виводить помилку
