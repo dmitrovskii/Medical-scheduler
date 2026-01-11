@@ -3,7 +3,7 @@
 import pyperclip
 import json
 import os
-from utils import ui
+from utils import ui, actions
 
 # Копіювання в буфер
 def copy_buf(info):
@@ -11,19 +11,15 @@ def copy_buf(info):
 
 # Нарізання введеної інформації
 def input_split(ask):
-
     info = input(str(ask)).split()
     return info
 
 # Перетворення даних ліста на інт та прохід фільтрів. Для праці з індексами
 def filtr_list(splitted, info):
-
     time_list = []
     for item in splitted:
-
         try: 
             index = int(item)
-
             if 1 <= index <= len(info):
                 time_list.append(index)
             else: 
@@ -33,9 +29,12 @@ def filtr_list(splitted, info):
         ui.clear(0.5)
     return time_list
 
+
+def blabla(number, filepath):
+    woop = actions.load_json(filepath)
+
 # Для завантаження джоснчіків
 def load_json(filepath):
-
     if not os.path.exists(filepath):
         ui.show_error(filepath)
         return []

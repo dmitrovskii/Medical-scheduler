@@ -14,5 +14,5 @@ def show_error(item):
 
 # Вивід списку з нумерацією
 def index_list(out_info):
-    for index, name in enumerate(out_info.values(), start=1):
+    for index, name in enumerate(out_info.keys(), start=1):
         print(f"{index}. {name}")

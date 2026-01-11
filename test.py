@@ -1,15 +1,6 @@
-from menus import menu, info, test
+from menus import menu, info
 from utils import actions, ui
 
-
-
-# data = {
-#     "name": "Василій",
-#     "age": 12,
-#     "salary": 25000.5,
-#     "human": True,
-#     "skilss": ["фудбол", "сантехнік", "ПОТУЖНО"]
-# }
 
 
 # with open('data1.json', 'r', encoding="utf-8") as f:
@@ -18,3 +9,18 @@ from utils import actions, ui
 # for key, value in templates.items():
 #     print(f"{key}: {value}")
 
+# attemp = actions.load_json('./data/menu_m.json')
+# print(attemp,"\n")
+
+# for s in attemp.items():
+#     print(s, "\n")
+
+mdict = {
+    "Інформація": "info",
+    "Налаштування": "settings",
+    "Про нас": "about",
+    "Вихід": "exit"
+}
+
+car = len(mdict)
+print(car)

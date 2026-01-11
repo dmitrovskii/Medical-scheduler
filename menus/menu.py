@@ -1,6 +1,6 @@
 from utils import actions, ui
 
-def loop_menu(menu_json='./data/main_menu.json', prompt='\nEnter: ', header='Головне меню'):
+def loop_menu(menu_json='./data/menu_m.json', prompt='\nEnter: ', header='Головне меню'):
 
     infomenu = actions.load_json(menu_json)
 
@@ -11,4 +11,5 @@ def loop_menu(menu_json='./data/main_menu.json', prompt='\nEnter: ', header='Г�
         user = actions.input_split(prompt)
         res = actions.filtr_list(user, infomenu)
 
+        # Повертає нульовий елемент в массиві, потрібно тільки тут адже це меню
         if res: return res[0]
