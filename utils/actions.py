@@ -1,3 +1,5 @@
+# Бібліотека для роботи з тим, чого нема в консолі
+
 import pyperclip
 import json
 import os
