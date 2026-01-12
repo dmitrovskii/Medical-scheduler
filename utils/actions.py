@@ -21,7 +21,7 @@ def filtr_list(splitted, info):
         try: 
             index = int(item)
             if 1 <= index <= len(info):
-                time_list.append(index)
+                time_list.append(index - 1)
             else: 
                 ui.show_error(item)
         except ValueError: 
@@ -30,8 +30,9 @@ def filtr_list(splitted, info):
     return time_list
 
 
-def blabla(number, filepath):
-    woop = actions.load_json(filepath)
+def take_action(index, filepath):
+    load_list = actions.load_json(filepath)
+    return load_list[index]['action']
 
 # Для завантаження джоснчіків
 def load_json(filepath):

@@ -15,3 +15,7 @@ from utils import actions, ui
 # for s in attemp.items():
 #     print(s, "\n")
 
+def take_action(index, filepath):
+    load_list = actions.load_json(filepath)
+    return load_list[index]['action']
+
