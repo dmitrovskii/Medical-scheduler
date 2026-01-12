@@ -1,7 +1,7 @@
-{
-    "Показати інфо": "info_show",
-    "Додати": "add",
-    "Видалити": "delete",
-    "Назад": "return"
+[
+    {"name": "Показати інфо", "action": "info_show"},
+    {"name": "Додати", "action": "add"},
+    {"name": "Видалити", "action": "delete"},
+    {"name": "Назад", "action": "return"}
+]
 
-}

@@ -1,6 +1,6 @@
-{
-    "Інформація": "info",
-    "Налаштування": "settings",
-    "Про нас": "about",
-    "Вихід": "exit"
-}
+[
+    {"name": "Інформація", "action": "info"},
+    {"name": "Налаштування", "action": "settings"},
+    {"name": "Про нас", "action": "about"},
+    {"name": "Вихід", "action": "exit"}
+]

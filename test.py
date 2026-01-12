@@ -15,12 +15,3 @@ from utils import actions, ui
 # for s in attemp.items():
 #     print(s, "\n")
 
-mdict = {
-    "Інформація": "info",
-    "Налаштування": "settings",
-    "Про нас": "about",
-    "Вихід": "exit"
-}
-
-car = len(mdict)
-print(car)
