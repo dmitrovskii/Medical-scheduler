@@ -1,13 +1,13 @@
 from utils import actions, ui
 
-def loop_menu(menu_json='./data/menu_m.json', prompt='\nEnter: ', header='Головне меню'):
+def loop_menu(menu_json='./config/menu_m.json', prompt='\nEnter: ', header='Головне меню'):
 
     infomenu = actions.load_json(menu_json)
 
     while True:
         ui.clear(0)
         print(f'--- {header} ---\n')
-        ui.index_list(infomenu)
+        ui.index_dict_name(infomenu)
         user = actions.input_split(prompt)
         res = actions.filtr_list(user, infomenu)
 

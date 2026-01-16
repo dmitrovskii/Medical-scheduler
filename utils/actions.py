@@ -5,6 +5,18 @@ import json
 import os
 from utils import ui, actions
 
+"""
+Execute a function from dictionary or return function name
+"""
+def route(action_name, action_map):
+
+    func = action_map.get(action_name)
+    if func: 
+        func()
+        return True
+    else: 
+        return action_name
+
 # Копіювання в буфер
 def copy_buf(info):
     pyperclip.copy("\n".join(info))
@@ -34,7 +46,7 @@ def take_action(index, filepath):
     load_list = actions.load_json(filepath)
     return load_list[index]['action']
 
-# Для завантаження джоснчіків
+# Load .json file
 def load_json(filepath):
     if not os.path.exists(filepath):
         ui.show_error(filepath)
