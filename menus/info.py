@@ -15,15 +15,18 @@ def run():
 
     
 def add():
-    print("Coming soon")
+    ui.great_print("Coming soon")
+    input()
     return True
 
 def delete():
-    print("Coming soon")
+    ui.great_print("Coming soon")
+    input()
     return False
     
 def show(path="./data"): 
     ui.list_dir(path)
+    input()
 
 
 INFO_MAP = {

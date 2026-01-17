@@ -15,7 +15,7 @@ def route(action_name, action_map):
         func()
         return True
     else: 
-        return action_name
+        return False
 
 # Копіювання в буфер
 def copy_buf(info):

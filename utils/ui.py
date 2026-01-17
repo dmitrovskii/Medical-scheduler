@@ -15,12 +15,18 @@ def show_error(item):
 # Вивід списку з нумерацією
 def index_dict_name(out_info):
     for index, name in enumerate(out_info, start=1):
+        time.sleep(0.05)
         print(f"{index}. {name['name']}")
 
 def index_list(info):
     for index, name in enumerate(info, start=1):
+        time.sleep(0.05)
         print(f"{index}. {name}")
 
 def list_dir(dirpath):
     show = os.listdir(dirpath)
     index_list(show)
+
+def great_print(info):
+    for i in info:
+        print(i, end="", flush=True)
