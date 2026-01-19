@@ -1,7 +1,7 @@
 # Тут буде відбуватися перенаправлення юзера на функцію в залежності від його вибору 
 
 from menus import info, settings, about
-from utils import ui, actions
+from utils import core
 
 ROUTES = {
     "info": info.run,
@@ -10,4 +10,4 @@ ROUTES = {
 }
 
 def run(action_name):
-    actions.route(action_name, ROUTES)
+    core.route(action_name, ROUTES)

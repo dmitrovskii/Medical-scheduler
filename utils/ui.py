@@ -1,4 +1,6 @@
-# Бібліотека створена для написання чота в консолі
+"""
+Output information to console with mamipulation 
+"""
 
 import os
 import time
@@ -9,8 +11,9 @@ def clear(parametr):
     os.system('cls')
 
 # Виводить помилку
-def show_error(item):
-    print(f"'{item}' is not correct!")
+def show_error(item, prompt='is not correct!'):
+    print(f"'{item}' {prompt}")
+    time.sleep(1)
 
 # Вивід списку з нумерацією
 def index_dict_name(out_info):
@@ -27,6 +30,10 @@ def list_dir(dirpath):
     show = os.listdir(dirpath)
     index_list(show)
 
-def great_print(info):
-    for i in info:
+def great_print(text):
+    """
+    Print text with drucar machine effect
+    """
+    for i in text:
+        time.sleep(0.01)
         print(i, end="", flush=True)

@@ -1,21 +1,8 @@
 # Бібліотека для роботи з тим, чого нема в консолі
 
-import pyperclip
-import json
-import os
-from utils import ui, actions
+import pyperclip, json
+from utils import ui, mjson
 
-"""
-Execute a function from dictionary or return function name
-"""
-def route(action_name, action_map):
-
-    func = action_map.get(action_name)
-    if func: 
-        func()
-        return True
-    else: 
-        return False
 
 # Копіювання в буфер
 def copy_buf(info):
@@ -43,20 +30,8 @@ def filtr_list(splitted, info):
 
 
 def take_action(index, filepath):
-    load_list = actions.load_json(filepath)
+    load_list = mjson.load_json(filepath)
     return load_list[index]['action']
-
-# Load .json file
-def load_json(filepath):
-    if not os.path.exists(filepath):
-        ui.show_error(filepath)
-        return []
-    try:
-        with open(filepath, 'r', encoding='utf-8') as f:
-            return json.load(f)
-    except json.JSONDecodeError:
-        ui.show_error(filepath)
-        return []
 
 # Для запису джсончіків
 def write_json(filepath, data):

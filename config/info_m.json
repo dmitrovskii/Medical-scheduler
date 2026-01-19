@@ -1,5 +1,6 @@
 [
     {"name": "Показати інфо", "action": "info_show"},
+    {"name": "Створити", "action": "create"},
     {"name": "Додати", "action": "add"},
     {"name": "Видалити", "action": "delete"},
     {"name": "Назад", "action": "return"}
