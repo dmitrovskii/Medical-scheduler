@@ -6,7 +6,7 @@ FILEPATH = "./config/info_m.json"
 
 def run():
     while True:
-        choose = menu.loop_menu(FILEPATH, header="Інформація")
+        choose = menu.loop_menu(FILEPATH, header="Файли та рядки")
         action_name = actions.take_action(choose, FILEPATH)
         back = core.route(action_name, INFO_MAP)
 

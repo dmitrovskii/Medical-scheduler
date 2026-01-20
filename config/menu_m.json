@@ -1,5 +1,5 @@
 [
-    {"name": "Інформація", "action": "info"},
+    {"name": "Файли та рядки", "action": "info"},
     {"name": "Налаштування", "action": "settings"},
     {"name": "Про нас", "action": "about"},
     {"name": "Вихід", "action": "exit"}

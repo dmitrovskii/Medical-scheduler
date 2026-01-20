@@ -1,8 +1,10 @@
-def run():
-    print("Not work!")
+from utils import mjson, ui
 
-# text = "Hello! We created this for you. Plese tell us if you have a some problem!"
-# for i in text:
-#     time.sleep(0.05)
-#     print(i, end="", flush=True)
-    
+FILEPATH =  './config/about.json'
+
+def run():
+    file = mjson.load_json(FILEPATH)
+
+    for name in file:
+       ui.great_print(f"{name['name']} \n")
+    input()
