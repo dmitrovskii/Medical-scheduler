@@ -1,6 +1,6 @@
 from utils import actions, ui, mjson
 
-def loop_menu(menu_json='./config/menu_m.json', prompt='\nEnter: ', header='Головне меню'):
+def loop_menu(menu_json, prompt='\nEnter: ', header='Головне меню'):
 
     infomenu = mjson.load_json(menu_json)
 

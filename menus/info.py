@@ -1,13 +1,13 @@
 from menus import menu
 from utils import core, ui, actions, mjson
-import os
+from config import FILES
 
-FILEPATH = "./config/info_m.json"
+# INFO = FILES['info']
 
 def run():
     while True:
-        choose = menu.loop_menu(FILEPATH, header="Файли та рядки")
-        action_name = actions.take_action(choose, FILEPATH)
+        choose = menu.loop_menu(FILES['info'], header="Файли та рядки")
+        action_name = actions.take_action(choose, FILES['info'])
         back = core.route(action_name, INFO_MAP)
 
         if back == False: 
