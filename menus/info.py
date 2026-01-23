@@ -1,6 +1,6 @@
 from menus import menu
 from utils import core, ui, actions, mjson
-from config import FILES
+from config import MAIN 
 
 import os
 
@@ -63,8 +63,8 @@ INFO_MAP = {
 
 def run():
     while True:
-        choose = menu.loop_menu(FILES['info'], header="Файли та рядки")
-        action_name = actions.take_action(choose, FILES['info'])
+        choose = menu.loop_menu(MAIN['info'], header="Файли та рядки")
+        action_name = actions.take_action(choose, MAIN['info'])
         ui.clear()
         
         back = core.route(action_name, INFO_MAP)

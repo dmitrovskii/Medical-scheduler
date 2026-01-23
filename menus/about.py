@@ -1,8 +1,8 @@
 from utils import mjson, ui
-from config import FILES
+from config import MAIN
 
 def run():
-   file = mjson.load_json(FILES['about'])
+   file = mjson.load_json(MAIN['about'])
 
    for name in file:
       ui.great_print(f"{name['name']}")
