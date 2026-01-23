@@ -1,4 +1,6 @@
-# Тут буде відбуватися перенаправлення юзера на функцію в залежності від його вибору 
+"""
+ACTUALLY FOR MAIN 
+"""
 
 from menus import info, settings, about
 from utils import core

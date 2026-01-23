@@ -5,5 +5,5 @@ def run():
    file = mjson.load_json(FILES['about'])
 
    for name in file:
-      ui.great_print(f"{name['name']} \n")
+      ui.great_print(f"{name['name']}")
    input()

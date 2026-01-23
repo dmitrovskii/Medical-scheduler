@@ -1,8 +1,6 @@
 [
-    {"name": "Файли", "action": "info_show"},
     {"name": "Створити файл", "action": "create"},
     {"name": "Додати", "action": "add"},
     {"name": "Видалити", "action": "delete"},
     {"name": "Назад", "action": "return"}
 ]
-

@@ -1,2 +1,3 @@
 def run():
-    print("Not work!")
+    print("Don't work!")
+    input()

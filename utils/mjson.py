@@ -16,7 +16,7 @@ def create(name):
         return False 
 
 
-def load_json(filepath):
+def load(filepath):
     """
     Return load .json in python object
     """

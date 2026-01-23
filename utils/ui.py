@@ -1,39 +1,44 @@
 """
-Output information to console with mamipulation 
+Виводить інформацію в консоль в залежності від заданих параметрів 
 """
-
 import os
 import time
 
-# Функція для очистки консолі
-def clear(parametr):
-    time.sleep(parametr)
-    os.system('cls')
+def clear():
+    if os.name == "nt":
+        os.system('cls')
+    else: 
+        os.system('clear')
+
+def show_files(path):
+    """
+    Виводить в стовбчик файли в заданій директорії
+    """
+    list_of_files = os.listdir(path)
+    for item in list_of_files:
+        print(item)
 
 # Виводить помилку
-def show_error(item, prompt='is not correct!'):
+def show_error(item, prompt='не є правильним!'):
     print(f"'{item}' {prompt}")
     time.sleep(1)
 
 # Вивід списку з нумерацією
-def index_dict_name(out_info):
+def index_dict_name(out_info, waittime=0):
     for index, name in enumerate(out_info, start=1):
-        time.sleep(0.05)
+        time.sleep(waittime)
         print(f"{index}. {name['name']}")
 
-def index_list(info):
-    for index, name in enumerate(info, start=1):
-        time.sleep(0.05)
-        print(f"{index}. {name}")
-
-def list_dir(dirpath):
-    show = os.listdir(dirpath)
-    index_list(show)
+# def index_list(info, waittime=0):
+#     for index, name in enumerate(info, start=1):
+#         time.sleep(waittime)
+#         print(f"{index}. {name}")
 
 def great_print(text):
     """
-    Print text with drucar machine effect
+    Вивиодить текст з ефектом друкарської машини
     """
     for i in text:
         time.sleep(0.01)
         print(i, end="", flush=True)
+    print('')

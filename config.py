@@ -1,9 +1,15 @@
 import pathlib
 
 ROOT = pathlib.Path(__file__).resolve().parent
+CONF = ROOT / 'config'
 
 FILES = {
-    "about": ROOT / 'config' / 'about.json',
-    "info": ROOT / 'config' / 'info_m.json', 
-    "menu": ROOT / 'config' / 'menu_m.json'
+    "about": CONF / 'about_main.json',
+    "info": CONF / 'info_main.json', 
+    "menu": CONF / 'menu_main.json',
+}
+
+INFO = {
+    'files': CONF / 'files_info.json',
+    'strings': CONF / 'strings_info.json'
 }

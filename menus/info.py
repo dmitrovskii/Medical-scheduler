@@ -2,30 +2,21 @@ from menus import menu
 from utils import core, ui, actions, mjson
 from config import FILES
 
-# INFO = FILES['info']
-
-def run():
-    while True:
-        choose = menu.loop_menu(FILES['info'], header="Файли та рядки")
-        action_name = actions.take_action(choose, FILES['info'])
-        back = core.route(action_name, INFO_MAP)
-
-        if back == False: 
-            break
+import os
 
 
 def create(prompt='Назва файлу: '):
+
     ui.great_print("Створюйте .json файли. Програма працює лише з ними.\n")
     ui.great_print("Пропишіть 'exit', щоб вийти.\n")
 
     while True:
         name_file = input(prompt)
-        if name_file == "exit":
-            break
+
+        if name_file == "exit": break
 
         elif name_file.endswith('.json'):
             complete = mjson.create(name_file)
-
             if complete:
                 ui.great_print(f"Файл '{name_file}' створено!")
             else: 
@@ -33,24 +24,48 @@ def create(prompt='Назва файлу: '):
         else:
             ui.show_error(name_file)
 
+def strings():
+    return False
+
+
+
 def add():
     ui.great_print("Coming soon")
     input()
     return True
 
 def delete():
-    ui.great_print("Coming soon")
-    input()
-    return True
+    ui.show_files('./data')
+    ui.great_print("Щоб відмінити - 'exit'")
+    while True:
+        filename = input("Enter: ")
+        if filename == "exit": 
+            break
+        elif not os.path.exists(f'./data/{filename}'):
+            ui.show_error(filename, "не існує!")
+        else: 
+            os.unlink(filename)
+            ui.great_print("Файл видалено!")
 
-    
-def show(path="./data"): 
-    ui.list_dir(path)
+
+def files(): 
+    ui.show_files('./data')
     input()
 
 INFO_MAP = {
-    "info_show": show,
+    "files": files,
+    "strings": strings,
+
     "add": add,
     "delete": delete,
     "create": create
 }
+
+def run():
+    while True:
+        choose = menu.loop_menu(FILES['info'], header="Файли та рядки")
+        action_name = actions.take_action(choose, FILES['info'])
+        ui.clear()
+        
+        back = core.route(action_name, INFO_MAP)
+        if not back: break
