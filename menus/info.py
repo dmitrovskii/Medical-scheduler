@@ -1,6 +1,6 @@
 from menus import menu
 from utils import core, ui, actions, mjson
-from config import MAIN 
+import config as cf
 
 import os
 
@@ -25,7 +25,8 @@ def create(prompt='Назва файлу: '):
             ui.show_error(name_file)
 
 def strings():
-    return False
+    ui.great_print('Coming soon')
+    input()
 
 
 
@@ -48,13 +49,28 @@ def delete():
             ui.great_print("Файл видалено!")
 
 
-def files(): 
-    ui.show_files('./data')
+def files():
+    # ui.show_files('./data')
+    # input()
+    # return
+    while True:
+        user_choise = menu.loop_menu(cf.INFO['files'], header='Файли. Маніпуляція')
+        action_name = actions.take_action(user_choise, cf.INFO['files'])
+        ui.clear()
+        
+        back = core.route(action_name, INFO_MAP)
+        if not back: break
+    
+    
+def rename():
+    ui.great_print('Coming soon')
     input()
 
 INFO_MAP = {
     "files": files,
     "strings": strings,
+
+    "rename": rename,
 
     "add": add,
     "delete": delete,
@@ -63,8 +79,8 @@ INFO_MAP = {
 
 def run():
     while True:
-        choose = menu.loop_menu(MAIN['info'], header="Файли та рядки")
-        action_name = actions.take_action(choose, MAIN['info'])
+        choose = menu.loop_menu(cf.MAIN['info'], header="Файли та рядки")
+        action_name = actions.take_action(choose, cf.MAIN['info'])
         ui.clear()
         
         back = core.route(action_name, INFO_MAP)
