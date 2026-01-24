@@ -3,7 +3,7 @@ from utils import core, ui, actions, mjson
 import config as cf
 
 import os
-
+import time
 
 def create(prompt='Назва файлу: '):
 
@@ -36,23 +36,21 @@ def add():
     return True
 
 def delete():
-    ui.show_files('./data')
-    ui.great_print("Щоб відмінити - 'exit'")
     while True:
-        filename = input("Enter: ")
-        if filename == "exit": 
-            break
-        elif not os.path.exists(f'./data/{filename}'):
+        print("Щоб відмінити - 'exit'\n")
+        ui.show_files('./data')
+        
+        filename = input("\nEnter: ")
+        if filename == "exit": break
+        elif not os.path.exists(f'./data/{filename}') or filename == "":
             ui.show_error(filename, "не існує!")
         else: 
             os.unlink(filename)
             ui.great_print("Файл видалено!")
-
-
+        time.sleep(0.5)
+        ui.clear()
+        
 def files():
-    # ui.show_files('./data')
-    # input()
-    # return
     while True:
         user_choise = menu.loop_menu(cf.INFO['files'], header='Файли. Маніпуляція')
         action_name = actions.take_action(user_choise, cf.INFO['files'])
