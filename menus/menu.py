@@ -7,7 +7,7 @@ def loop_menu(config_path, prompt='\nEnter: ', header='Головне меню')
     while True:
         ui.clear()
         print(f'--- {header} ---\n')
-        ui.index_dict_name(infomenu)
+        ui.index_dict_name(infomenu, 0.03)
         split_data = actions.input_split(prompt)
         res = actions.filtr_list(split_data, infomenu)
 
