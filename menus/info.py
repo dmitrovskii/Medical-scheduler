@@ -5,14 +5,13 @@ import config as cf
 import os
 import time
 
-def create(prompt='Назва файлу: '):
-
-    ui.great_print("Створюйте .json файли. Програма працює лише з ними.\n")
-    ui.great_print("Пропишіть 'exit', щоб вийти.\n")
-
+def create(prompt='Enter: '):
     while True:
-        name_file = input(prompt)
+        ui.great_print("Створюйте .json файли. Програма працює лише з ними.")
+        ui.great_print("Щоб відмінити - 'exit'\n")
+        ui.show_files("./data")
 
+        name_file = input(prompt)
         if name_file == "exit": break
 
         elif name_file.endswith('.json'):
@@ -23,6 +22,8 @@ def create(prompt='Назва файлу: '):
                 ui.show_error(name_file, "Файл вже існує!")
         else:
             ui.show_error(name_file)
+        time.sleep(0.5)
+        ui.clear()
 
 def strings():
     ui.great_print('Coming soon')
