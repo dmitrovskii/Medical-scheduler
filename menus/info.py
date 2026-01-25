@@ -5,7 +5,7 @@ import config as cf
 import os
 import time
 
-def create(prompt='Enter: '):
+def create(prompt='\nEnter: '):
     while True:
         ui.great_print("Створюйте .json файли. Програма працює лише з ними.")
         ui.great_print("Щоб відмінити - 'exit'\n")
