@@ -3,12 +3,12 @@ from utils import ui
 
 
 
-def create(name):   
+def create(name, path):   
     """
     Create .json file, return false if file already exists
     """
     try:
-        with open(f"./data/{name}", 'x', encoding='utf-8') as f:
+        with open(f"{path}/{name}", 'x', encoding='utf-8') as f:
             json.dump([], f, indent=4)
         return True
     

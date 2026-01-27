@@ -5,17 +5,19 @@ import config as cf
 import os
 import time
 
+DATA = cf.DATA
+
 def create(prompt='\nEnter: '):
     while True:
         ui.great_print("Створюйте .json файли. Програма працює лише з ними.")
         ui.great_print("Щоб відмінити - 'exit'\n")
-        ui.show_files("./data")
+        ui.show_files(DATA)
 
         name_file = input(prompt)
         if name_file == "exit": break
 
         elif name_file.endswith('.json'):
-            complete = mjson.create(name_file)
+            complete = mjson.create(name_file, DATA)
             if complete:
                 ui.great_print(f"Файл '{name_file}' створено!")
             else: 
@@ -39,14 +41,14 @@ def add():
 def delete():
     while True:
         print("Щоб відмінити - 'exit'\n")
-        ui.show_files('./data')
+        ui.show_files(DATA)
         
         filename = input("\nEnter: ")
         if filename == "exit": break
-        elif not os.path.exists(f'./data/{filename}') or filename == "":
+        elif not os.path.exists(f'{DATA}/{filename}') or filename == "":
             ui.show_error(filename, "не існує!")
         else: 
-            os.unlink(filename)
+            os.unlink(f'{DATA}/{filename}')
             ui.great_print("Файл видалено!")
         time.sleep(0.5)
         ui.clear()

@@ -2,6 +2,7 @@ import pathlib
 
 ROOT = pathlib.Path(__file__).resolve().parent
 
+DATA = ROOT / 'data'
 
 PATH_MAIN = ROOT / 'config' / 'main'
 PATH_INFO = ROOT / 'config' / 'info'
