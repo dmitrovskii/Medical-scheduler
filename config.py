@@ -1,3 +1,7 @@
+"""
+Files paths to work folders
+"""
+
 import pathlib
 
 ROOT = pathlib.Path(__file__).resolve().parent

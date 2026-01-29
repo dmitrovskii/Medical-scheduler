@@ -1,4 +1,7 @@
-# Бібліотека для роботи з тим, чого нема в консолі
+"""
+Background for app
+"""
+
 
 import pyperclip, json
 from utils import ui, mjson
