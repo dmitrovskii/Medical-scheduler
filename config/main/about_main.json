@@ -1,0 +1,9 @@
+[
+    {"name": "========================\n##  MEDICAL-SHEDULER  ##\n========================\n", "action": "logo"},
+    {"name": "Created by @dmitrovskii", "action": "creator"},
+    {"name": "Version pre-alpha", "action": "version"},
+    {"name": "Status in development", "action": "status"}, 
+    {"name": "Still open-source", "action": "source" },
+    {"name": "Thanks to my brain", "action": "thanks"},
+    {"name": "\nContacts: anthonyskim09@gmail.com", "action": "contacts"}
+]

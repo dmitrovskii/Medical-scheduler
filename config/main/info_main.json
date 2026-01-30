@@ -1,0 +1,6 @@
+[
+    {"name": "Файли", "action": "files"},
+    {"name": "Рядки", "action": "strings"},
+    {"name": "Назад", "action": "return"}
+]
+
