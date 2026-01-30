@@ -1,15 +1,9 @@
 """
 Background for app
 """
-
-
-import pyperclip, json
 from utils import ui, mjson
 
 
-# Копіювання в буфер
-def copy_buf(info):
-    pyperclip.copy("\n".join(info))
 
 # Нарізання введеної інформації
 def input_split(prompt=""):
