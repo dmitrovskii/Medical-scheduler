@@ -3,12 +3,23 @@
 """
 import os
 import time
+import sys
 
-def clear():
-    if os.name == "nt":
-        os.system('cls')
-    else: 
-        os.system('clear')
+# def clear():
+#     if os.name == "nt":
+#         os.system('cls')
+#     else: 
+#         os.system('clear')
+
+def clear(value=0):
+    if value == 0:
+        sys.stdout.write('\x1b[2J\x1b[H')
+    else:
+        for _ in range(1, value):
+            sys.stdout.write('\x1b[1A\x1b[2K')
+    sys.stdout.write('\x1b[1A')
+    sys.stdout.flush()
+
 
 def show_files(path):
     """
