@@ -8,11 +8,11 @@ import time
 DATA = cf.DATA
 
 def create(prompt='\nEnter: '):
-    while True:
-        ui.great_print("Створюйте .json файли. Програма працює лише з ними.")
-        ui.great_print("Щоб відмінити - 'exit'\n")
-        ui.show_files(DATA)
+    ui.great_print("Створюйте .json файли. Програма працює лише з ними.")
+    ui.great_print("Щоб відмінити - 'exit'\n")
+    ui.show_files(DATA)
 
+    while True:
         name_file = input(prompt)
         if name_file == "exit": break
 
@@ -25,7 +25,7 @@ def create(prompt='\nEnter: '):
         else:
             ui.show_error(name_file)
         time.sleep(0.5)
-        ui.clear()
+        ui.clear(3)
 
 def strings():
     ui.great_print('Coming soon')
