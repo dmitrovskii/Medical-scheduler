@@ -33,3 +33,7 @@ class MenuHandler:
         if 0 <= index <= len(self.menu_items):
             return self._menu_items[index]['action']
         return None
+
+    def route_data(self, action_name, action_dict) -> function:
+        func = action_dict.get(action_name)
+        if func: func()
