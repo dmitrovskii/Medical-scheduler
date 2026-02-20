@@ -1,0 +1,15 @@
+"""
+ACTUALLY FOR MAIN 
+"""
+
+from menus import info, settings, about
+from utils import core
+
+ROUTES = {
+    "info": info.run,
+    "settings": settings.run,
+    "about": about.run
+}
+
+def run(action_name):
+    core.route(action_name, ROUTES)

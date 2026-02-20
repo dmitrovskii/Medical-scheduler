@@ -1,0 +1,6 @@
+[
+    {"name": "Створити", "action": "create"},
+    {"name": "Перейменувати", "action": "rename"},
+    {"name": "Видалити", "action": "delete"},
+    {"name": "Назад", "action": "return"}
+]
