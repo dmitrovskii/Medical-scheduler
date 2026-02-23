@@ -1,4 +1,5 @@
 import os
+import time
 import config
 from utils import mjson, ui
 
@@ -37,3 +38,23 @@ class MenuHandler:
     def route_data(self, action_name, action_dict) -> function:
         func = action_dict.get(action_name)
         if func: func()
+
+    def run(self, title: str, action_dict: dict) -> None:
+        while True:
+            ui.clear()
+            print(f" --- {title} --- \n")
+            ui.index_dict_name(self.menu_items)   
+
+            raw_input = input('\nEnter: ')
+            valid_indices = self.process_input(raw_input)
+
+            if valid_indices:
+                index = valid_indices[0]
+                action_name = self.get_action_by_index(index)
+                ui.clear()
+
+                if action_name == "return":
+                    return
+                self.route_data(action_name, action_dict)
+                
+            ui.clear(3)
