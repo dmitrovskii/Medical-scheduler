@@ -1,11 +1,15 @@
-from menus import menu
-from utils import core, ui, actions, mjson
-import config as cf
+from menus.menu import MenuHandler
+from utils import ui, mjson
+import config
 
 import os
 import time
 
-DATA = cf.DATA
+DATA = config.DATA
+ 
+def run():
+    info_menu = MenuHandler(config.MAIN['info'])
+    info_menu.run("INFO MENU", INFO_MAP)
 
 def create(prompt='\nEnter: '):
     ui.great_print("Створюйте .json файли. Програма працює лише з ними.")
@@ -30,8 +34,6 @@ def create(prompt='\nEnter: '):
 def strings():
     ui.great_print('Coming soon')
     input()
-
-
 
 def add():
     ui.great_print("Coming soon")
@@ -77,12 +79,3 @@ INFO_MAP = {
     "delete": delete,
     "create": create
 }
-
-def run():
-    while True:
-        choose = menu.loop_menu(cf.MAIN['info'], header="Файли та рядки")
-        action_name = actions.take_action(choose, cf.MAIN['info'])
-        ui.clear()
-        
-        back = core.route(action_name, INFO_MAP)
-        if not back: break
